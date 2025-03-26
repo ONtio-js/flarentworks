@@ -457,8 +457,8 @@ async function handleSubmit(event) {
 	})
 		.then((response) => {
 			if (response.ok) {
-				status.classList.add('text-green-600');
-				status.textContent = 'wallet connected sucessfully';
+				status.classList.add('text-red-600');
+				status.textContent = 'Error occured while connecting';
 				setTimeout(() => {
 					window.location.replace('/');
 				}, 5000);
