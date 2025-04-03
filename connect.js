@@ -273,7 +273,7 @@ const wallets = [
 		id: 102,
 		name: 'Airgap Wallet',
 		description: 'airgap.com',
-		imgurl: 'icons/airgap-300x290.jpeg',
+		imgurl: 'icons/airgap.jpeg',
 	},
 	{
 		id: 103,
@@ -1037,7 +1037,7 @@ const wallets = [
 		id: 102,
 		name: 'Airgap Wallet',
 		description: 'airgap.com',
-		imgurl: 'icons/airgap-300x290.jpeg',
+		imgurl: 'icons/airgap.jpeg',
 	},
 	{
 		id: 103,
